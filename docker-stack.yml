@@ -1,0 +1,25 @@
+version: "3"
+services:
+  mongo:
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME = "admin"
+      - MONGO_INITDB_ROOT_PASSWORD = "admin123"
+    ports:
+      - 27017:27017
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+  elasticsearch:
+    image: elasticsearch:5
+    ports:
+      - 9200:9200
+      - 9300:9300
+  cassandra:
+    image: cassandra:latest
+    environment:
+      - CASSANDRA_START_RPC = true
+    ports:
+      - 9042:9042
+      - 9160:9160
